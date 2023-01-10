@@ -1,15 +1,12 @@
 def prize(x, y, z):
-    if x == y:
-        if y == z:
-            return 10000+1000*x
-        else:
-            return 1000+100*x
-    elif x == z:
-        return 1000+100*x
+    if x == z:
+        return 10000+x*1000
     elif y == z:
-            return 1000+100*y
+        return 1000+y*100
+    elif x == y:
+        return 1000+y*100
     else:
-        return max(x,y,z)*100
+        return z*100
 
-x, y, z = list(map(int, input().split()))
-print(prize(x, y, z))
+[x, y, z] = sorted(list(map(int, input().split())))
+print(prize(x,y,z))
