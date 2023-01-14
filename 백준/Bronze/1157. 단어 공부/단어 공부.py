@@ -5,9 +5,7 @@ for s in S:
     A[ord(s)-ord('a')] += 1
 
 x = A.index(max(A))
-for n in A[x+1:]:
-    if n == max(A):
-        x = ord('?')-ord('A')
-        break
+if A.count(max(A)) > 1:
+    x = ord('?')-ord('A')
 
 print(chr(x+ord('A')))
