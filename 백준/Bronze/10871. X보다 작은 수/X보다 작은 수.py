@@ -1,10 +1,6 @@
-import sys
-
-N, X = list(map(int, input().split()))
-input = sys.stdin.readline()
-A = list(map(int, input.split()))
-output = ''
-for x in A:
-    if x < X:
-        output += f'{x} '
-sys.stdout.write(output)
+N, X = map(int, input().split())
+A = list(map(int, input().split()))
+for n in range(0, N):
+    if A[n] < X:
+        print(A[n], end=' ')
+print()
