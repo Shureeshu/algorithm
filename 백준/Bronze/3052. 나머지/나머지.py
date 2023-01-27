@@ -1,10 +1,2 @@
-S = set()
-i = 1
-x = int(input())
-S.add(x%42)
-while i < 10:
-    i += 1
-    x = int(input())
-    S.add(x%42)
-
-print(len(S))
+x = {int(input())%42: 0 for i in range(10)}
+print(len(x))
