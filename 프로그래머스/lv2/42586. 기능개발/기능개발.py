@@ -1,3 +1,4 @@
+from math import ceil 
 def solution(progresses, speeds):
     answer = []
     progresses.reverse()
@@ -13,10 +14,7 @@ def solution(progresses, speeds):
             if publishing > 0:
                 answer.append(publishing)
                 publishing = 0
-            while current_progress + progress_per_day * working_day < 100:
-                working_day += 1
+            working_day = ceil((100 - current_progress)/progress_per_day)
             publishing += 1
     answer.append(publishing)
     return answer
-
-# 
